@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Password Generator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -11,7 +11,8 @@
       <div class="display">
         <input type="text" id="password" placeholder="password" />
       </div>
-      <button>Generate password</button>
+      <button onclick="createPassword();">Generate password</button>
+      <button onclick="resetPassword();">Reset password</button>
     </div>
 
     <script>
@@ -23,17 +24,23 @@
       const number = "0123456789";
       const symbol = "!@#$%^&*()-=_+[]{}|;:,.<>?/";
 
+      const allChars = upperCase + lowerCase + number + symbol;
+
       function createPassword() {
         let password = "";
         password += upperCase[Math.floor(Math.random() * upperCase.length)];
         password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
         password += number[Math.floor(Math.random() * number.length)];
-        password += symbol[Math.floor(Math.random() * upperCase.length)];
+        password += symbol[Math.floor(Math.random() * symbol.length)];
 
         while (length > password.length) {
           password += allChars[Math.floor(Math.random() * allChars.length)];
         }
         passwordBox.value = password;
+      }
+
+      function resetPassword() {
+        passwordBox.value = "";
       }
     </script>
   </body>
