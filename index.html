@@ -11,12 +11,14 @@
       <h1>Generate your random password</h1>
       <div class="display">
         <input type="text" id="password" placeholder="password" />
-        <img src="images/copy.png" alt="" />
+        <img src="images/copy.png" alt="" onclick="copyPassword();" />
       </div>
-      <button onclick="createPassword();">
-        <img src="images/generate.png" alt="" />Generate password
-      </button>
-      <button onclick="resetPassword();">Reset password</button>
+      <div class="button-area">
+        <button onclick="createPassword();">
+          <img src="images/generate.png" alt="" />Generate password
+        </button>
+        <button onclick="resetPassword();">Reset password</button>
+      </div>
     </div>
 
     <script src="app.js"></script>

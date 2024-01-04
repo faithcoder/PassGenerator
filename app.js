@@ -24,3 +24,8 @@ function createPassword() {
 function resetPassword() {
   passwordBox.value = "";
 }
+
+function copyPassword() {
+  passwordBox.select();
+  document.execCommand("copy");
+}
